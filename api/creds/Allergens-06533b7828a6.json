@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "allergens-244109",
+  "private_key_id": "06533b7828a60c275cfded11c586b9ee1a3908d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDhIdPUFxBY2YcW\nvZFGIislXd2AvrOzvjexydK65cRJ3ArMrW9biY71R+79eV0sKUDnkUkHH+ombcuT\nwhoAFfRNOTpkSVfzMdN61FaIXTAE9Eb8RWuUu2410w8etLrQe0PECuqEigLlaAfZ\n+YwDNzWQ8P0yr2wOemS3qCrzHxH6A1E738ipfYc/IhNY5txpHFIdot4xN9h/NYwP\nhmYrhiVRPRWUMIyFClaaHN3VokAgtrDmuT4EMrccpNodrDHYv6vE/R8vObaSy8Cc\n7+e0OwLqZJKVVUKeRnem9ix1XGyzXHiEySCtAqS4cPOl8C35JEnkPINsIlHfnAI9\nNk3wH7rRAgMBAAECggEAAsNDwndK/dAjkoGeigYK0gFSIc2VTngf3lhr89u0ejSP\nVF4vfufT/4oTsnweCtfxwjW79/CqErEnvac04vnh/t2cLBVjVSpwHjKDYlaEa5ck\n1N00OgXHzzTJG3cb0Mmmdf4tTRWVfgO2DvR7RaHUkDQI42mYMaBKYp+XcVbZBWCl\npXLU3zKkP3ripCDdepApBrQYfBcK11glXhs72QhK+ZOsp7vy+uNG77ccGoQnMLbk\nejKDGrb1ydulNgHzD5JRxQuOwFE2wAjA/CmMNjRyE4zvhq/UQdRrd9sTyTxzDIkV\n7J/Kw4e3X1dVJiwfQ2vhkQzg37uwhpBQwIAS+GSmHQKBgQD60fo8Fjep9ljd+hQm\nAFTlX0+zblVhs7oIW8A+Nda8upd2JBSKjWpFAsTtQnUsuJ6w8xRYECPV1TRbxKE9\noDmtx+t5VrAmq/mEKHHY9sKLTAxldHV/fYsOYBaB1e9CIflabElGXitY045Ln5lx\n9wTpIhRDZBWjgtG5R9OqR8WRhQKBgQDlyAsqr5kelBprFKe0649LXUgLvyLIy6VN\n/KJwxIqP3Iw+TZ6GmEoaB1+jBsy4uxED+0lykt+wjl0iYy13/nha+la0xEGaU65/\n9pc+fFOIkdjUCuCTaRdOxP05XTkIMgLDJtWDd1onCBKk/86ExJA46XxjK0gzu54E\n5iluv8of3QKBgQDl47dbg3GZknV5X1FAU2V8ppNCfoo7dqO4LYBShL5BVTSl0AQT\nyfHxNsyQOi1zw/OPc/zdik2OHFBVHDA9b7HuGiM1n8LsbwvPmdJfbix5yEZEZy2a\noNLnZiK69f7JuqH1wvKWUJGiZKUzoyDdV+9kTxwLeJxstebLz42tsQLgkQKBgQDK\nYKL9KIVqujR+ZUXEAchGL1U6C1DemwXvpveG7IPBaxUV9pUNpGl3fVENK/r5JME6\nyYKJ57QeM3TxyXoNelGUh3IAae4Bt3w0dgIFZcjIuvPG5gGfs2p01OjWMjX98tYd\n/UEGNgNv5xtMuYSxyNHhXjtQuJkx/yeQ1wpc4Yxq/QKBgAqgmanW6aKU86Seo7NO\nqIY4nG+E8ATbATiu9UeADA8CgbepNiqO9rQB/2syN4OaQgF1tia+xOq6iy915VTh\nPl3+UiLPauXQGMGRgwqM1NwRf+2YBMaAaNzWDmfYeHXQNBH6krfxNeSA5dGxpi3J\nDCXl52su35PxJytHaKLIIBz+\n-----END PRIVATE KEY-----\n",
+  "client_email": "ingredient-vision@allergens-244109.iam.gserviceaccount.com",
+  "client_id": "104593041819446506002",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ingredient-vision%40allergens-244109.iam.gserviceaccount.com"
+}
