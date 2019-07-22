@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Row, Col, Button, Jumbotron} from 'react-bootstrap';
 import {useState} from 'react';
+import AddButton from './AddButton';
 
 const Allergen = () => {
     const [submitResp, setResp] = useState({"No results": "hllo"});
@@ -27,6 +28,7 @@ const Allergen = () => {
             <Row>
                 <Jumbotron>{JSON.stringify(submitResp.Content)}</Jumbotron>
             </Row>
+            <AddButton/>
         </Container>
     )
 }

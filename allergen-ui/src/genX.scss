@@ -13,15 +13,20 @@ body {
     color: black;
 } */
 
-.nav {
-    display: inline-flex;
+.nav-header {
+    margin-top: 5px;
+    display: inline-flex !important;
     position: relative;
     overflow: hidden;
-    max-width: 100%;
+    width: 90%;
     background-color: #fff;
     padding: 0 20px;
     border-radius: 40px;
     box-shadow: 0 10px 40px rgba(159, 162, 177, .8);  
+}
+
+.header-nav {
+    text-align: center;
 }
 
 .nav-item {
@@ -68,3 +73,127 @@ button.home-dropdown{
     font-size: 20px;
     margin: 0 0 1rem 0;
 }
+
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .link-to-original {
+    position: absolute;
+    top: 1rem;
+  }
+  
+  .letter-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .quad-button {
+    --plus-sign-duration: 0.2s;
+    position: relative;
+    color: white;
+    border-radius: 20px;
+    transition: 0.4s;
+    transition-property: transform;
+  }
+  .quad-button[data-button-state='fanStart'] .plus-sign__horizontal, .quad-button[data-button-state='fanComplete'] .plus-sign__horizontal {
+    transform: translate(-50%, -50%) scaleY(3.5) rotate(90deg);
+  }
+  .quad-button[data-button-state='fanStart'] .plus-sign__vertical, .quad-button[data-button-state='fanComplete'] .plus-sign__vertical {
+    transform: var(--vertical-transalate) scaleX(3.5);
+  }
+  .quad-button[data-button-state='fanComplete'] {
+    transform: rotate(45deg);
+  }
+  .quad-button[data-button-state='fanComplete'] .letter {
+    border-radius: 50% !important;
+  }
+  .quad-button[data-button-state='fanComplete'] .letter span {
+    opacity: 0.5;
+    transform: rotate(-45deg);
+  }
+  
+  .letter {
+    position: relative;
+    background: rebeccapurple;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    opacity: 1;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .letter[data-icon-state='active'] span {
+    opacity: 1 !important;
+  }
+  .letter span {
+    opacity: 0;
+    font-size: 20px;
+    transition: opacity ease-in;
+  }
+  .letter:nth-child(1) {
+    border-top-left-radius: 20px;
+  }
+  [data-button-state='fanComplete'] .letter:nth-child(1) {
+    transform: translate(-20%, -20%) scale(1);
+  }
+  .letter:nth-child(1)[data-icon-state='active'] {
+    transform: translate(-20%, -20%) scale(0.9);
+  }
+  .letter:nth-child(2) {
+    border-top-right-radius: 20px;
+  }
+  [data-button-state='fanComplete'] .letter:nth-child(2) {
+    transform: translate(20%, -20%) scale(1);
+  }
+  .letter:nth-child(2)[data-icon-state='active'] {
+    transform: translate(20%, -20%) scale(0.9) !important;
+  }
+  .letter:nth-child(3) {
+    border-bottom-left-radius: 20px;
+  }
+  [data-button-state='fanComplete'] .letter:nth-child(3) {
+    transform: translate(-20%, 20%) scale(1);
+  }
+  .letter:nth-child(3)[data-icon-state='active'] {
+    transform: translate(-20%, 20%) scale(0.9) !important;
+  }
+  .letter:nth-child(4) {
+    border-bottom-right-radius: 20px;
+  }
+  [data-button-state='fanComplete'] .letter:nth-child(4) {
+    transform: translate(20%, 20%) scale(1);
+  }
+  .letter:nth-child(4)[data-icon-state='active'] {
+    transform: translate(20%, 20%) scale(0.9) !important;
+  }
+  
+  .plus-sign__vertical,
+  .plus-sign__horizontal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0.35em;
+    width: 4em;
+    border-radius: 0.6em;
+    background: white;
+    transition: var(--plus-sign-duration) ease-in;
+  }
+  
+  .plus-sign__horizontal {
+    --horizontal-translate: translate(-50%, -50%) rotate(90deg);
+    transform: var(--horizontal-translate) scaleX(1);
+  }
+  
+  .plus-sign__vertical {
+    --vertical-transalate: translate(-50%, -50%);
+    transform: var(--vertical-transalate) scaleX(1);
+  }
+  

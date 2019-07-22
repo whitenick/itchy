@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-require('@google-cloud/debug-agent').start();
+// require('@google-cloud/debug-agent').start();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
