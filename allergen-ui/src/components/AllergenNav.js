@@ -28,15 +28,13 @@ const AllergenNav = () => {
         //     </Nav>
         // </Navbar>
         <Nav className="mr-auto nav-header">
-            <Navbar.Brand className="nav-item" href="/">Nick White</Navbar.Brand>
-            <Nav.Link className="nav-item" href="crypto">Crypto</Nav.Link>
-            <Nav.Link className="nav-item" href="allergen" >Allergen Reader</Nav.Link>
+            <Navbar.Brand className="nav-item" href="/">Allergen Reader</Navbar.Brand>
             <Dropdown>
-                <DropdownToggle variant="light" className="btn">
-                    Me
-                </DropdownToggle>
+                {/* <DropdownToggle variant="clear" className="btn">
+                </DropdownToggle> */}
                 <Dropdown.Menu>
                     <Dropdown.Item href="#">Allergies</Dropdown.Item>
+                    <Dropdown.Item href="/info">Info</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </Nav>

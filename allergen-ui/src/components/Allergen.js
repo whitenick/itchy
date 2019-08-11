@@ -28,7 +28,6 @@ const Allergen = () => {
             <Row>
                 <Jumbotron>{JSON.stringify(submitResp.Content)}</Jumbotron>
             </Row>
-            <AddButton/>
         </Container>
     )
 }

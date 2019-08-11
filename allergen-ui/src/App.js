@@ -27,8 +27,7 @@ function App() {
       </div>
       <Col>
         <div className="box">
-          <Title text="Allergen Check" />
-          <Copy />
+          <Title text="Allergies" />
         </div>
         <Router> 
         <div className="App">
