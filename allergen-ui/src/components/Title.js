@@ -1,81 +1,76 @@
 import React from 'react';
 import {Form, Button} from 'react-bootstrap';
-import {useState} from 'react';
+import {InputGroup, InputGroupAddon, InputGroupText, Input} from 'reactstrap';
+import {useState, useEffect} from 'react';
 
-const Title = props => {
-    const [objects, setActiveObjects] = useState([{value: "No results"}])
+const Title = ({ text, allergens, setAllergens }) => {
+    const [ohNo, selectedOhNo] = useState([{value: "None Selected"}])
     const [seleced, setSelected] = useState([]);
+    const [inputGroups, setInputs] = useState([]);
+    const [groupCount, setCount] = useState(1);
+
     const registerAllergies = (e) => {
-        console.log(e);
-        console.log(seleced);
+        var valueArray = allergens.map(a => a.value);
+        var jsonObject = {
+            "allergens": valueArray
+        }
     }
-    
-    const allergyClick = (e) => {
-        console.log(e.target.selectedOptions);
-        var options = [...e.target.selectedOptions];
-        setSelected([...options.map(option => option.value)])
+
+    useEffect(() => {
+        setAllergens(seleced);
+    }, [seleced]);
+
+    const handleInput = (e) => {
+        console.log(e.target.value);
+        var newState = {
+            key: e.target.key,
+            value: e.target.value
+        }
+        setAllergens([...allergens, newState])
     }
-    
+
+    const inputItem = () => {
+        var inputList = [];
+        var inputFrame = () => {
+            return (
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                        <InputGroupText onChange={(e) => handleInput(e)}>
+                            <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+                        </InputGroupText>
+                    </InputGroupAddon>
+                    <Input key={Math.floor(Math.random() * 20)} type="text" onChange={(e) => handleInput(e)} placeholder="Add ingredient ..." />
+                </InputGroup>
+            );
+        }
+        for (var i = 0; i < groupCount; i++) {
+            inputList.push(inputFrame());
+        }
+
+        setInputs([inputList]);
+    }
+
+    useEffect(() => {
+        inputItem();
+    }, [groupCount]);
     
     return (
-        <div>
-            <h1 className="title">{props.text}</h1>
+        <div className='container'>
             <Form>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Control onChange={(e) => allergyClick(e)} as="select" multiple>
-                    <option value="peanuts">Peanuts</option>
-                    <option value="eggs">Eggs</option>
-                    <option value="tree-nuts">Tree Nuts</option>
-                    <option value="dairy">Dairy</option>
-                    <option value="gluten">Gluten</option>
-                </Form.Control>
-            </Form.Group>
-            {/* <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows="3" />
-            </Form.Group> */}
-            <Button onClick={registerAllergies} variant="primary" size="md" active>
-                Submit
-            </Button>
-        </Form>
+                {inputGroups}
+                <div className='row'>
+                    <Button onClick={() => setCount(groupCount + 1)}>
+                        add ingeredient...
+                    </Button>
+                </div>
+                <div className='row'>
+                    <Button onClick={(e) => registerAllergies(e)} variant="primary" size="md" active>
+                        Submit
+                    </Button>
+                </div>
+            </Form>    
         </div>
     );
-}
-
-export function Copy() {
-    const [objects, setActiveObjects] = useState([{value: "No results"}])
-    const [seleced, setSelected] = useState(["No Results"]);
-    const registerAllergies = (e) => {
-        console.log(e);
-        console.log(seleced);
-    }
-
-    return (
-        <Form>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Allergies:</Form.Label>
-                <Form.Control onChange={(e) => {
-                    console.log(e.target.value);
-                    setSelected([...seleced, e.target.value])} } as="select" multiple>
-                    <option >Peanuts</option>
-                    <option>Eggs</option>
-                    <option>Tree Nuts</option>
-                    <option>Dairy</option>
-                    <option>Gluten</option>
-                </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows="3" />
-            </Form.Group>
-            <Button onClick={registerAllergies} variant="primary" size="md" active>
-                Submit
-            </Button>
-            <div>
-                <ul>{seleced}</ul>
-            </div>
-        </Form>
-    )
 }
 
 export default Title;

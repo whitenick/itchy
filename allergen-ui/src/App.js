@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Home from './components/Home';
 import Crypto from './components/Crypto';
 import {Navbar, Jumbotron, Container, Col} from 'react-bootstrap';
-import AllergenNav from './components/AllergenNav';
+import AllergenHeader from './components/AllergenHeader';
 import Allergen from './components/Allergen';
 import Title from './components/Title';
 import {Copy} from './components/Title';
@@ -15,6 +15,7 @@ import './genX.scss';
 function App() {
   
   return (
+    <>
     <Container>
       <link
           rel="stylesheet"
@@ -23,23 +24,27 @@ function App() {
           crossOrigin="anonymous"
       />
       <div className="header-nav">
-        <AllergenNav/>
+        <AllergenHeader/>
       </div>
-      <Col>
-        <div className="box">
-          <Title text="Allergies" />
-        </div>
-        <Router> 
-        <div className="App">
-          <Jumbotron>
-            <Route path="/" exact component={Home}/>
-            <Route path="/crypto" component={Crypto} />
-            <Route path='/allergen' component={Allergen} />
-          </Jumbotron>
-        </div>
-      </Router>
-      </Col>
+      <Container>
+          {/* <div className="box">
+            <Title text="Allergies" />
+          </div> */}
+          <Router> 
+          <div className="App">
+            <Container>
+              <Route path="/" exact component={Home}/>
+              <Route path="/crypto" component={Crypto} />
+              <Route path='/allergen' component={Allergen} />
+            </Container>
+          </div>
+        </Router>
+      </Container>
     </Container>
+    <div className='background'>
+      <img src='home-background.jpg'/>
+    </div>
+    </>
   );
 }
 

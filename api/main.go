@@ -26,6 +26,11 @@ type Article struct {
 	Content string
 }
 
+type Image struct {
+	Ingredients []string
+	Images      []os.File
+}
+
 type Articles []Article
 
 func allArticles(w http.ResponseWriter, r *http.Request) {
@@ -123,18 +128,12 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Homepage write")
 }
 
-func submitForm(w http.ResponseWriter, r *http.Request) {
+func submitImage(w http.ResponseWriter, r *http.Request) {
 	(w.Header().Set("Access-Control-Allow-Origin", "*"))
 	fmt.Println("submitForm endpoint hit...")
 	var requestBuffer bytes.Buffer
-	// requestBytes := requestBuffer.Bytes()
-	l := r.URL
+	l = r.URL
 	fmt.Println(l)
-	// _, e := r.Read(requestBytes)
-	// if e != nil {
-	// 	fmt.Printf(e.Error())
-	// 	return
-	// }
 	resArticle := Article{
 		Title:   "Nick's book",
 		Desc:    "The benefits of microservice computing",
@@ -144,6 +143,14 @@ func submitForm(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resArticle)
 	fmt.Print(requestBuffer.Bytes())
 	// fmt.Fprintf(w, "Hello")
+
+	var body, error = r.GetBody()
+	if error != nil {
+		return
+	}
+
+	fmt.Print(body)
+
 	return
 }
 
@@ -151,7 +158,7 @@ func main() {
 	os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", googleCredPath)
 	r := mux.NewRouter()
 	fmt.Println("Hello")
-	r.HandleFunc("/form-submit", submitForm)
+	r.HandleFunc("/image-submit", submitImage)
 
 	// var buf bytes.Buffer
 	// error := parseNutritionList(&buf, "./images/IMG_4172.heic")
