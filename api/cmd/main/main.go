@@ -21,7 +21,8 @@ func submitImage(w http.ResponseWriter, r *http.Request) {
 	body := r.Body
 	var newImage api.ImagesRequest
 	if body == nil {
-		fmt.Println(body)
+		fmt.Printf("Error: %s\n Request: %s\n", body, r.ContentLength)
+		json.NewEncoder(w).Encode(body)
 		return
 	}
 
