@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/vincent-petithory/dataurl"
@@ -60,11 +59,9 @@ func apiLanding(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", api.GoogleCredPath)
 	r := mux.NewRouter()
 	fmt.Println("Hello")
 	r.HandleFunc("/image-submit", submitImage)
 	r.HandleFunc("/", apiLanding)
-
 	log.Fatal(http.ListenAndServe(":8080", r))
 }

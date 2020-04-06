@@ -16,7 +16,7 @@ import (
 )
 
 // GoogleCredPath ... Credential location
-var GoogleCredPath = os.Getenv("GOPATH") + "/src/github.com/whitenick/antipathy/api/creds/Allergens-06533b7828a6.json"
+var GoogleCredPath = "/creds/Allergens-06533b7828a6.json"
 
 // ResolveImage .. given image data w/ ingredients, resolve matches
 func ResolveImage(image Image) (string, error) {
@@ -32,6 +32,14 @@ func ResolveImage(image Image) (string, error) {
 		return "", err
 	}
 	return result, nil
+}
+
+func GetCredPath() string {
+	res, err := os.Getwd()
+	if err != nil {
+		return ""
+	}
+	return res + GoogleCredPath
 }
 
 func translateIngredients(buf bytes.Buffer) (string, error) {
