@@ -1,6 +1,6 @@
 # Itchy
 ## Overview
-Itchy is an app built for translating nutrion labels. Here's the workflow:
+Itchy is an app built for translating nutrion labels using Google Cloud's Vision API. Here's the workflow.
 
 ### Problem
 Can I eat it?
